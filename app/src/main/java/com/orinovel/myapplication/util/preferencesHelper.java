@@ -4,43 +4,39 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 /**
- * Created by amikom on 28/09/2018.
+ * Created by Gustu on 10/11/2018.
  */
 
-public class preferencesHelper {
-    private static preferencesHelper INSTANCE;
+public class PreferencesHelper {
+    private  static PreferencesHelper INSTANCE;
     private SharedPreferences sharedPreferences;
 
-    private preferencesHelper(Context context){
-        SharedPreferences = context
-                .getApplicationContext()
-                .getSharedPreferences("simple.android.app", Context.MODE_PRIVATE);
-    }
 
-    public static  preferencesHelper getInstace(Context context){
+    private PreferencesHelper(Context context){
+        sharedPreferences = context
+                .getApplicationContext()
+                .getSharedPreferences("simple.android.app",Context.MODE_PRIVATE);
+    }
+    public static PreferencesHelper getInstance(Context context){
         if (INSTANCE == null){
-            INSTANCE = new preferencesHelper(context);
+            INSTANCE = new PreferencesHelper(context);
         }
         return INSTANCE;
     }
-
-    public SharedPreferences pref(){
-        return SharedPreferences;
+    public  SharedPreferences Pref(){
+        return sharedPreferences;
     }
-
     public Boolean isLogin(){
-        return SharedPreferences.getBoolean("isLogin", false);
+        return sharedPreferences.getBoolean("isLogin",false);
     }
-
-    public void setLogin(Boolean isCall){
-        sharedPreferences.edit().putBoolean("isLogin", isCall).apply();
+    public void  setLogin(boolean isCall){
+        sharedPreferences.edit().putBoolean("isLogin",isCall).apply();
     }
+    public void setName (String isName){
+        sharedPreferences.edit().putString("isName",isName).apply();
 
-    public void setName(String isName){
-        sharedPreferences.edit().putString("isName", isName).apply();
     }
-
-    public String getName (){
-        return sharedPreferences.getString("isName", "");
+    private String getName(){
+        return sharedPreferences.getString("isName","");
     }
 }

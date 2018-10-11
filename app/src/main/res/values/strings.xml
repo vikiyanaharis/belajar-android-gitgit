@@ -2,4 +2,7 @@
     <string name="app_name">17.02.0057</string>
     <string name="go_to_fragment">pindah</string>
     <string name="pindah" />
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

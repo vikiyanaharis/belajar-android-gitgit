@@ -5,36 +5,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.orinovel.myapplication.MainActivity">
+    <LinearLayout
 
-    <TextView
+        android:id="@+id/l1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Hello : "
+            />
+        <TextView
+            android:id="@+id/pengguna"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/hello"
+            android:textColor="@color/colorPrimary"
+
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@id/l1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/textView" />
+        android:orientation="vertical"
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="go to fragment"
-        android:onClick="pindah"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="200dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="go to activity"
-        tools:layout_editor_absoluteX="127dp"
-        tools:layout_editor_absoluteY="265dp"
-        android:layout_above="@+id/button"
-        android:layout_centerHorizontal="true" />
+        >
+        <Button
+            android:id="@+id/tambahuser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ADD USER"
+            android:onClick="adds"/>
+        <Button
+            android:id="@+id/daftaruser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="List User"
+            android:onClick="list"/>
+        <Button
+            android:id="@+id/bt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To Fragment"
+            android:onClick="kefrag"/>
+        <Button
+            android:id="@+id/bt2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" to Activity"
+            android:onClick="activity"/>
+    </LinearLayout>
 
 </RelativeLayout>
