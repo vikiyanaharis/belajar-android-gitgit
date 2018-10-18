@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.orinovel.myapplication.activity.AddUserActivity;
+import com.orinovel.myapplication.activity.DetailActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -25,9 +28,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void adds(View view) {
+        Intent intent = new Intent(MainActivity.this, AddUserActivity.class);
+        startActivity(intent);
     }
 
     public void list(View view) {
+        Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+        startActivity(intent);
     }
 
     public void kefrag(View view) {

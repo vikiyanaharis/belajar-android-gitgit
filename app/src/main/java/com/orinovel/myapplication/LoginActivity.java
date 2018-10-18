@@ -31,15 +31,22 @@ public class LoginActivity extends AppCompatActivity {
         instance.setName(n);
 
 
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(intent);
+        if (n != null && p != ""){
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
 
 
-        Bundle login = new Bundle();
+            Bundle bundle_login = new Bundle();
 
-        login.putString("nama", n);
-        intent.putExtras(login);
-        startActivity(intent);
-        finish();
+            bundle_login.putString("nama", n);
+            intent.putExtras(bundle_login);
+            startActivity(intent);
+            finish();
+        }
+        else {
+            Toast.makeText(getApplicationContext(),"Isikan Nama Dan Password",Toast.LENGTH_SHORT).show();
+
+        }
+
     }
 }

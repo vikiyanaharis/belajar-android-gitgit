@@ -20,6 +20,8 @@
         <activity android:name=".Main3Activity" />
         <activity android:name=".Main2Activity" />
         <activity android:name=".splashActivity"></activity>
+        <activity android:name=".activity.AddUserActivity"></activity>
+        <activity android:name=".activity.DetailActivity"></activity>
     </application>
 
 </manifest>
